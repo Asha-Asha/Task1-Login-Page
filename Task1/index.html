@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Your CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/free-vector/blue-futuristic-networking-technology_53876-100679.jpg?t=st=1711776419~exp=1711780019~hmac=441d368d091db0692a5459bcb0127ae37f19d1901ecd9e799d5c4043402b1759&w=900'); /* Replace 'https://via.placeholder.com/1500x1000' with your actual background image URL */
+            background-size: cover;
+            background-position: center;
+        }
+        .login {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Adding transparency to the background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color:cadetblue;
+        }
+        .loginTitle {
+            font-size: 40px;
+            font-weight: bold;
+            color: black;
+        }
+        .loginForm {
+            margin-top: 20px;
+        }
+        .loginInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .loginButton {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 5%;
+        }
+        .forgotPasswordContainer {
+            margin-top: 20px;
+            cursor: pointer;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .forgotPasswordText {
+            font-size: 18px;
+            color: #007bff;
+        }
+        .forgotPasswordForm {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .forgotPasswordInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .forgotPasswordSubmitButton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .welcomeMessage {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login">
+    <span class="loginTitle">Login</span>
+    <form class="loginForm" onsubmit="return false;">
+        <div>
+            <label for="username" style="font-size: 20px; color: black; font-weight: bold;">Username</label>
+            <input class="loginInput" type="text" id="username" placeholder="Enter your username...">
+        </div>
+        <div>
+            <label for="password" style="font-size: 20px; color: black; font-weight: bold;">Password</label>
+            <input class="loginInput" type="password" id="password" placeholder="Enter your password...">
+        </div>
+        <div style="margin-top: 100px;">
+            <button class="loginButton" onclick="showWelcomeMessage()">Login</button>
+        </div>
+    </form>
+
+    <div class="forgotPasswordContainer" onclick="document.querySelector('.forgotPasswordForm').style.display = 'block';">
+        <span class="forgotPasswordText">Forgot Password?</span>
+    </div>
+
+    <div class="forgotPasswordForm" style="display: none;">
+        <form onsubmit="alert('Password reset link will be sent to ' + document.getElementById('emailForReset').value); return false;">
+            <label style="font-size: 27px; color: white;">Enter your email to reset password</label>
+            <input class="forgotPasswordInput" type="text" id="emailForReset" placeholder="Enter your email...">
+            <button type="submit" class="forgotPasswordSubmitButton">Submit</button>
+        </form>
+    </div>
+
+    <div class="welcomeMessage" id="welcomeMessage" style="display: none; color: purple">
+        Welcome to our website!
+    </div>
+</div>
+
+<script>
+    function showWelcomeMessage() {
+        document.getElementById('welcomeMessage').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
